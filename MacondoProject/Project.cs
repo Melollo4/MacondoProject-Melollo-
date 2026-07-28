@@ -24,16 +24,20 @@ class Program
         while (isOnStart)
         {
             Console.Clear();
-            Console.WriteLine("                  __   __    ________     ______    ______     __    __    ______     ______                          ");
-            Console.WriteLine("                 |  \_/  |  |   __   |   /  ____|  /  __  \   |   \ |  |  |  __  \   /  __  \                         ");
-            Console.WriteLine("                 | |\_/| |  |  |__|  |  |  |____  |  |__|  |  |  |\\|  |  | |__|  | |  |__|  |                        ");
-            Console.WriteLine("                 |_|   |_|  |__|  |__|   \______|  \______/   |__| \___|  |______/   \______/                         ");
+
+            /*
+            Console.WriteLine("                    __   __    ________     ______    ______     __    __    ______     ______                          ");
+            Console.WriteLine("                   |  \_/  |  |   __   |   /  ____|  /  __  \   |   \ |  |  |  __  \   /  __  \                         ");
+            Console.WriteLine("                   | |\_/| |  |  |__|  |  |  |____  |  |__|  |  |  |\\|  |  | |__|  | |  |__|  |                        ");
+            Console.WriteLine("                   |_|   |_|  |__|  |__|   \______|  \______/   |__| \___|  |______/   \______/                         ");
             Console.WriteLine("");
-            Console.WriteLine("    ______     _______    ________    ________    __         _______    __   __    _______    __    __    ________    ");
-            Console.WriteLine("   /  ____\   |  ___ _|  |__    __|  |__    __|  |  |       |  ___ _|  |  \_/  |  |  ___ _|  |   \ |  |  |__    __|   ");
-            Console.WriteLine("   \____  \   |  ___|_      |  |        |  |     |  |____   |  ___|_   | |\_/| |  |  ___|_   |  |\\|  |     |  |      ");
-            Console.WriteLine("   \______/   |_______|     |__|        |__|     |_______|  |_______|  |_|   |_|  |_______|  |__| \___|     |__|      ");            
+            Console.WriteLine("      ______     _______    ________    ________    __         _______    __   __    _______    __    __    ________    ");
+            Console.WriteLine("     /  ____\   |  ___ _|  |__    __|  |__    __|  |  |       |  ___ _|  |  \_/  |  |  ___ _|  |   \ |  |  |__    __|   ");
+            Console.WriteLine("     \____  \   |  ___|_      |  |        |  |     |  |____   |  ___|_   | |\_/| |  |  ___|_   |  |\\|  |     |  |      ");
+            Console.WriteLine("     \______/   |_______|     |__|        |__|     |_______|  |_______|  |_|   |_|  |_______|  |__| \___|     |__|      ");            
             Console.WriteLine("");
+            */
+
             Console.WriteLine("                                 ''Macondo Settlement is YOUR Settlement''");
             Console.WriteLine("");
             Console.WriteLine("1 - Play");
@@ -169,16 +173,6 @@ class Program
         Console.WriteLine("Your Settlement was Eradicated.");
         Console.WriteLine("You Survived for " + day + " days.");
         Console.WriteLine("Thank you for playing :]");
-        Console.WriteLine("");
-        Console.WriteLine("                  __   __    ________     ______    ______     __    __    ______     ______                          ");
-        Console.WriteLine("                 |  \_/  |  |   __   |   /  ____|  /  __  \   |   \ |  |  |  __  \   /  __  \                         ");
-        Console.WriteLine("                 | |\_/| |  |  |__|  |  |  |____  |  |__|  |  |  |\\|  |  | |__|  | |  |__|  |                        ");
-        Console.WriteLine("                 |_|   |_|  |__|  |__|   \______|  \______/   |__| \___|  |______/   \______/                         ");
-        Console.WriteLine("");
-        Console.WriteLine("    ______     _______    ________    ________    __         _______    __   __    _______    __    __    ________    ");
-        Console.WriteLine("   /  ____\   |  ___ _|  |__    __|  |__    __|  |  |       |  ___ _|  |  \_/  |  |  ___ _|  |   \ |  |  |__    __|   ");
-        Console.WriteLine("   \____  \   |  ___|_      |  |        |  |     |  |____   |  ___|_   | |\_/| |  |  ___|_   |  |\\|  |     |  |      ");
-        Console.WriteLine("   \______/   |_______|     |__|        |__|     |_______|  |_______|  |_|   |_|  |_______|  |__| \___|     |__|      ");
 
     }
 }
