@@ -77,7 +77,7 @@ class Program
             // Ending day Early
             if (input == "1")
             {
-                actionsLeft = 0;
+                actionsLeft = -1;
             }
             // Foraging Ingredients if Player has at least one Action left
             else if (input == "2" && actionsLeft > 0)
@@ -104,7 +104,7 @@ class Program
             }
 
             // Day Ends
-            if (actionsLeft == 0)
+            if (actionsLeft == -1)
             {
                 // clear screen, show food eaten and if survived (remove one settler if not enough food, isAlive = false if 0 settlers), set food to 0 if negative, reset actions, increase day by one)
                 Console.Clear();
