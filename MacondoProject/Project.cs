@@ -23,6 +23,7 @@ class Program
         // Start Screen Loop
         while (isOnStart)
         {
+            Console.Clear();
             Console.WriteLine("Welcome to the Macondo Settlement!");
             Console.WriteLine("Please chooce one of the following:");
             Console.WriteLine("");
@@ -47,7 +48,6 @@ class Program
             else
             {
                 // Restart the While-Loop if none of the above were chosen
-                Console.Clear();
             }
 
         }
