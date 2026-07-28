@@ -1,7 +1,8 @@
-Macondo Clicker Game Thing
+# Macondo Settlement
+For PC (Windows)
 
-Simple prototype clicker game built in Unity for the Hack Club Macondo event.
+A simple, completely text-based little Settlement Game for you to pick up and enjoy :]
 
-Click for coins, spend coins for upgrades and save your progress!
+Spend Actions to keep your Settlement alive and thriving, making sure they're surviving, multiplying and growing!
 
-Hackatime Time Tracker For PC (Windows)
+Timed with Hackatime thingy
