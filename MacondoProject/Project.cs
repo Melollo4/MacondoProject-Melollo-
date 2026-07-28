@@ -131,7 +131,7 @@ class Program
                 {
                     Console.WriteLine(food + " Food remains.");
                     day ++;
-                    actionsLeft = 2;
+                    actionsLeft = settlers;
                     Console.Write("[Press ENTER to Continue]");
                     Console.ReadLine();
                 }
