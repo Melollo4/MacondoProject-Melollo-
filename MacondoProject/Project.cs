@@ -29,7 +29,7 @@ class Program
             Console.WriteLine("");
             Console.WriteLine("1 - Play");
             Console.WriteLine("2 - Exit");
-
+            Console.WriteLine("");
             Console.Write("Input the number representing your choice: ");
             string input = Console.ReadLine();
 
