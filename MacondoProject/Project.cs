@@ -1,10 +1,118 @@
 using System;
+using System.Reflection;
 
 class Program
 {
     static void Main()
     {
-        Console.WriteLine("Test");
-        Console.WriteLine("More Test");
+
+        int day = 1;
+        int food = 5;
+        int settlers = 2;
+        int ingredients = 3;
+
+        string currentGoal = "Have 5 Settlers";
+
+        int money = 0;
+
+        int actionsLeft = 2;
+        
+        bool isOnStart = true;
+        bool isAlive = true;
+
+        // Start Screen Loop
+        while (isOnStart)
+        {
+            Console.WriteLine("Welcome to the Macondo Settlement!");
+            Console.WriteLine("Please chooce one of the following:");
+            Console.WriteLine("");
+            Console.WriteLine("1 - Play");
+            Console.WriteLine("2 - Exit");
+
+            string input = Console.ReadLine("Input the number representing your choise");
+
+            if (input == "1")
+            {
+                // Start the Game
+                isOnStart = false;
+            }
+            else if (input == "2")
+            {
+                // Exit the Program
+                Console.Clear;
+                Console.Write("Terminating Program...");
+                Environment.Exit(1);
+            }
+            else
+            {
+                // Restart the While-Loop if none of the above were chosen
+                Console.Clear;
+            }
+
+        }
+
+        while (isAlive)
+        {
+            
+            // Display and Choices
+            Console.Clear;
+            Console.WriteLine("Status - Day: " + day + " | Settlers: " + settlers);
+            Console.WriteLine("Resources - Food: " + food + " | Ingredients: " + ingredients)
+            Console.WriteLine("");
+            Console.WriteLine("Actions left today: " + actionsLeft);
+            Console.WriteLine("");
+            Console.WriteLine("Current Goal: " + currentGoal);
+            Console.WriteLine("");
+            Console.WriteLine("Choices:");
+            Console.WriteLine("1 - End day early");
+            Console.WriteLine("2 - Forage Ingredients     [+3 Ingredients] [-1 Action]");
+            Console.WriteLine("3 - Cook Food              [-2 Ingredients] [+1 Food]")
+            Console.WriteLine("4 - Reproduce              [+1 Settler]     [-1 Action]");
+
+            // Read Player Input
+            string input = Console.ReadLine("");
+
+            // Checking Player Input
+            // Ending day Early
+            if (input == 1)
+            {
+                actionsLeft = 0;
+            }
+            // Foraging Ingredients if Player has at least one Action left
+            else if (input == 2 && actionsLeft > 0)
+            {
+                ingredients += 3;
+                Action --;
+            }
+            // Cooking Food if Player has at least 2 Ingredients
+            else if (input == 3)
+            {
+                ingredients -= 2;
+                food ++:
+            }
+            // Reproduces if Player has at least 2 Settlers and one Action left
+            else if (input == 4 && settlers > 1 && actioneLeft > 0)
+            {
+                settlers ++;
+                Action --;
+            }
+            // In case player did a wrong-type or did something they couldn't do
+            else
+            {
+                // Nothing happens
+            }
+
+            // Day Ends
+            if (actionsLeft == 0)
+            {
+                // clear screen, show food eaten and if survived (remove one settler if not enough food, isAlive = false if 0 settlers), set food to 0 if negative, reset actions, increase day by one)
+            }
+
+        }
+
+        Console.WriteLine("Your Settlement was Eradicated.");
+        Console.WriteLine("You Survived for " + day + " days.");
+        Console.WriteLine("Thank you for playing :]");
+
     }
 }
