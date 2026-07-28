@@ -65,3 +65,91 @@ Version 1.18.2 - Fixed minor errors, added something new x2 :], added in-game ac
 Version 1.17 - Fixed minor errors x3
 
 Version 1.16 - Final game
+
+PRESS IT
+Welcome back. It’s been a while since your last calibration. Let’s start with something simple. Press 'Ѯ'.
+
+
+
+A short game, inspired by a basic test program.
+
+
+
+Version 1.1 - Final game
+
+CATCH is an easy-to-play game that you, your family and friends can pick up at any time for a quick, easy laugh!
+
+
+
+Play the simple game of CATCH! Take turns chasing each other, trying to TAG the opposite player. But watch out, you only have 30 seconds or the point goes to the defender!
+
+
+
+FEATURES:
+
+More than 10 colorful and unique maps to run around on.
+Smooth controls chosen for easier gameplay and a more enjoyable experience.
+Powerups that makes the game more equal as you play.
+Surprisingly entertaining concept.
+Endless playability - randomized maps, powerups and an infinite amount of rounds!
+You're IT!
+
+2060message
+Hello,
+
+Launch the attached file pls. You're our only hope!
+
+Regards,
+
+You from the future :]
+
+
+
+The developer of the program seems to have forgotten to give clear instructions to the player, but that's no problem since your AI assistant has its own auto-correction system! Please use the correct wording and phrasing when spelling: LOAD TOP SECRET P-
+
+
+
+A recreation of an old program made for my dads birthday many years ago.
+
+Skate Wiz & The Frog Fiasco
+Once upon a time there lived a wizard in a big big tower. He loved playing around with magic and skating around his castle on his pink skateboard. One day he decided he wanted some test subject so he went out the the nearest village. Capturing several people was not that hard for such a powerful wizard. With magic in the air he brought them back to his castle where he placed them. One by one his experiments started and more and more frogs filled the castle cages. Then the wizard got careless he accidentally left one cage open!? The frogs started flooding out and infested the castle. The former humans now turned frogs started attacking the wizard as revenge. but as previously established, the wizard is a strong wizard so now he skates through his castle killing all the bad frogs.
+
+A sidescroller project by: Cornelia, Jonathan, Lulle and Melvin (Melollo)
+
+Glitched - OUT of order
+You slowly push open the door to the arcade. It might not be morally right to break into the arcade but you can’t be blamed. Your love for the retro games brings you to the building and the many games inside. The room is dark as your feet lead you further into the building. There you see what you love. Rows of rows of arcade games both new and old. You start checking out some of the games. In a secluded corner you see one of the games. Glitched - out of order. You don’t recognise it so you walk closer. Clicking the play button nothing happens. It seems to be broken. Crouching down you lift the lid of the side to look at the electronics. A bunch of wires and metal parts you know nothing about. Reaching inside to poke at it you drag a finger along the silicone coated wire. Sticky. Someone must have spilled cola on it. Standing up again you press another button again. Maybe it will do something. Otherwise you can just move on. Instead you hear a big crack. Before you can move away you feel the electricity travel up your body before your vision goes black. Next thing you knew you were somewhere else. A place with high walls spanning their way up around you. Confused, you start walking. After a few turns you realise you are in a maze. Now it is your job to find your way out.
+
+Haiii guys thanks for playin aour game :3 :3 :3 Here are every imported assets: Credits music: Song: sakuracloud - miffy cafe Music provided by NoCopyrightSounds Free Download/Stream: Watch: Code world ambience: Dark Ambient Soundscape Dreamscape by FreeMusicForVideo Title song: Space ambient cinematic by DELOsound Banana song: Funky by Nastelbom
+
+Credits:
+
+- Development -
+
+Cornelia, Jonathan, Lukas, Melvin Piirimets (Melollo)
+
+- Graphics -
+
+Daniel (TheZenile), Jacob (Topztugan)
+
+- Honorable Mention (character inspiration) -
+
+Rion
+
+Fugi is a cozy mushroom-plucking game inspired by the Swedish forests and fungi. Enjoy a casual experience in your very own way, whether you prefer collecting, exploring, money-making or all of it!
+
+Features
+
+The game will feature 10 different areas for you to wander around in and enjoy.
+Real nature sounds from Sweden will be implemented to all forests for more atmosphere.
+45 entirely different mushrooms to collect, sell and learn about.
+Control everything purely with your keyboard and switch between the modern standard and the classic RPG-feel.
+On release, endless gameplay paired with multiple endings a story will be available.
+Choose your own gameplay: do what you enjoy the most. Collect all species, explore secret areas or become a millionare! All while plucking mushrooms in cozy forests!
+
+
+
+Let's pluck some mushrooms!
+
+
+
+COMING SOON
