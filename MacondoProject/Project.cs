@@ -24,11 +24,14 @@ class Program
         while (isOnStart)
         {
             Console.Clear();
-            Console.WriteLine("Welcome to the Macondo Settlement!");
-            Console.WriteLine("Please chooce one of the following:");
+            Console.WriteLine(" * MACONDO SETTLEMENT *");
+            Console.WriteLine("''Macondo Settlement is YOUR Settlement''")
             Console.WriteLine("");
             Console.WriteLine("1 - Play");
-            Console.WriteLine("2 - Exit");
+            Console.WriteLine("2 - Rules");
+            // Settings
+            Console.WriteLine("3 - Credits");
+            Console.WriteLine("4 - Exit");
             Console.WriteLine("");
             Console.WriteLine("Input the number representing your choice: ");
             string input = Console.ReadLine();
@@ -39,6 +42,20 @@ class Program
                 isOnStart = false;
             }
             else if (input == "2")
+            {
+                // Rules
+                Console.Clear();
+                Console.WriteLine("Macondo Settlement is YOUR Settlement.\n\nThe Settlers eat one Food each at the end of every day.\n\nThe amount of Actions your can spend in one day is determined by the number of Settlers.\n\nNot having enough food for the settlers means the death of one of them.\n\nKill all the Settlers and you loose.\n\nGood Luck :]");
+                Console.ReadLine();
+            }
+            else if (input == "2")
+            {
+                // Credits
+                Console.Clear();
+                Console.WriteLine("Melvin Piirimets (Melollo)");
+                Console.ReadLine();
+            }
+            else if (input == "4")
             {
                 // Exit the Program
                 Console.Clear();
