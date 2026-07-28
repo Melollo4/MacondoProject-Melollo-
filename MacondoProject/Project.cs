@@ -57,7 +57,7 @@ class Program
             // Display and Choices
             Console.Clear;
             Console.WriteLine("Status - Day: " + day + " | Settlers: " + settlers);
-            Console.WriteLine("Resources - Food: " + food + " | Ingredients: " + ingredients)
+            Console.WriteLine("Resources - Food: " + food + " | Ingredients: " + ingredients);
             Console.WriteLine("");
             Console.WriteLine("Actions left today: " + actionsLeft);
             Console.WriteLine("");
@@ -66,7 +66,7 @@ class Program
             Console.WriteLine("Choices:");
             Console.WriteLine("1 - End day early");
             Console.WriteLine("2 - Forage Ingredients     [+3 Ingredients] [-1 Action]");
-            Console.WriteLine("3 - Cook Food              [-2 Ingredients] [+1 Food]")
+            Console.WriteLine("3 - Cook Food              [-2 Ingredients] [+1 Food]");
             Console.WriteLine("4 - Reproduce              [+1 Settler]     [-1 Action]");
 
             // Read Player Input
@@ -88,7 +88,7 @@ class Program
             else if (input == 3)
             {
                 ingredients -= 2;
-                food ++:
+                food ++;
             }
             // Reproduces if Player has at least 2 Settlers and one Action left
             else if (input == 4 && settlers > 1 && actioneLeft > 0)
@@ -106,6 +106,34 @@ class Program
             if (actionsLeft == 0)
             {
                 // clear screen, show food eaten and if survived (remove one settler if not enough food, isAlive = false if 0 settlers), set food to 0 if negative, reset actions, increase day by one)
+                Console.Clear;
+                int foodEaten = food - settlers;
+                Console.WriteLine("Food needed: " + foodEaten);
+                Console.WriteLine("Amount of Settlers: " + settlers);
+                food - foodEaten;
+
+                if (food < 0)
+                {
+                    // Not enough Food for the Settlers
+                    Console.WriteLine("There was not enough Food for all the Settlers...");
+                    Console.WriteLine("One Settler died of starvation");
+
+                    if (settlers <= 0)
+                    {
+                        isAlive = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine(settlers + " Settlers remain.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(food + " Food remains.");
+                    day ++;
+                    Console.ReadLine("[Press ENTER to Continue]");
+                }
+
             }
 
         }
