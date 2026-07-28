@@ -29,7 +29,8 @@ class Program
             Console.WriteLine("1 - Play");
             Console.WriteLine("2 - Exit");
 
-            string input = Console.ReadLine("Input the number representing your choise");
+            Console.Write("Input the number representing your choise");
+            string input = Console.ReadLine();
 
             if (input == "1")
             {
@@ -39,7 +40,7 @@ class Program
             else if (input == "2")
             {
                 // Exit the Program
-                Console.Clear;
+                Console.Clear();
                 Console.Write("Terminating Program...");
                 Environment.Exit(1);
             }
@@ -55,7 +56,7 @@ class Program
         {
             
             // Display and Choices
-            Console.Clear;
+            Console.Clear();
             Console.WriteLine("Status - Day: " + day + " | Settlers: " + settlers);
             Console.WriteLine("Resources - Food: " + food + " | Ingredients: " + ingredients);
             Console.WriteLine("");
@@ -70,28 +71,28 @@ class Program
             Console.WriteLine("4 - Reproduce              [+1 Settler]     [-1 Action]");
 
             // Read Player Input
-            string input = Console.ReadLine("");
+            string input = Console.ReadLine();
 
             // Checking Player Input
             // Ending day Early
-            if (input == 1)
+            if (input == "1")
             {
                 actionsLeft = 0;
             }
             // Foraging Ingredients if Player has at least one Action left
-            else if (input == 2 && actionsLeft > 0)
+            else if (input == "2" && actionsLeft > 0)
             {
                 ingredients += 3;
-                Action --;
+                actionsLeft --;
             }
             // Cooking Food if Player has at least 2 Ingredients
-            else if (input == 3)
+            else if (input == "3")
             {
                 ingredients -= 2;
                 food ++;
             }
             // Reproduces if Player has at least 2 Settlers and one Action left
-            else if (input == 4 && settlers > 1 && actioneLeft > 0)
+            else if (input == "4" && settlers > 1 && actionsLeft > 0)
             {
                 settlers ++;
                 Action --;
@@ -110,7 +111,7 @@ class Program
                 int foodEaten = food - settlers;
                 Console.WriteLine("Food needed: " + foodEaten);
                 Console.WriteLine("Amount of Settlers: " + settlers);
-                food - foodEaten;
+                food -= foodEaten;
 
                 if (food < 0)
                 {
@@ -131,7 +132,8 @@ class Program
                 {
                     Console.WriteLine(food + " Food remains.");
                     day ++;
-                    Console.ReadLine("[Press ENTER to Continue]");
+                    Console.Write("[Press ENTER to Continue]");
+                    Console.ReadLine();
                 }
 
             }
