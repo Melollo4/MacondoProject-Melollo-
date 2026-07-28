@@ -1,0 +1,2 @@
+C:\Users\melvi\Documents\GitHub\MacondoProject-Melollo-\MacondoProject\bin\Release\net9.0\win-x64\publish\MacondoProject.pdb
+C:\Users\melvi\Documents\GitHub\MacondoProject-Melollo-\MacondoProject\bin\Release\net9.0\win-x64\publish\MacondoProject.exe
