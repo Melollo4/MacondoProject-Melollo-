@@ -41,3 +41,27 @@ dotnet run
 
 ## 📝 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+My attacks have no effect on you?
+Time to pull out my *secret* attack
+
+STATUS:GONE is a puzzle-game mystery, far out in deep space.
+
+You’ve just finished repairing another deep-space satellite. Replaying over and over in your helmet is your wife’s latest message — you really miss her. But while setting the navigation for Earth, you realize your ship is malfunctioning. To escape the horrible situation you’ve ended up in, you manage to dock with a much larger vessel. As your own ship silently explodes in the docking chamber, you feel relieved… but is this situation really that much better? Either way, there’s no going back.
+
+FEATURES:
+
+Computer-command-driven puzzles, where you not only have to think outside the box but sometimes also outside the room.
+The deeper you explore, the more you will discover!
+Different game-mechanics introduced all throughout the game.
+A humor aspect occasionally shows up.
+Multiple endings, secret rooms and various Easter eggs.
+Version 1.18.3 - Added another in-game achievement (requested by a friend). Enjoy!
+
+Version 1.18.2 - Fixed minor errors, added something new x2 :], added in-game achievements
+
+Version 1.17 - Fixed minor errors x3
+
+Version 1.16 - Final game
