@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj": {}
+    "C:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj": {}
   },
   "projects": {
-    "c:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj": {
+    "C:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj",
+        "projectUniqueName": "C:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj",
         "projectName": "MacondoProject",
-        "projectPath": "c:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj",
+        "projectPath": "C:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\MacondoProject.csproj",
         "packagesPath": "C:\\Users\\melvi\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\obj\\",
+        "outputPath": "C:\\Users\\melvi\\Documents\\GitHub\\MacondoProject-Melollo-\\MacondoProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

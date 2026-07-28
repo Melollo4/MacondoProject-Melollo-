@@ -29,7 +29,7 @@ class Program
             Console.WriteLine("1 - Play");
             Console.WriteLine("2 - Exit");
 
-            Console.Write("Input the number representing your choise");
+            Console.Write("Input the number representing your choice.");
             string input = Console.ReadLine();
 
             if (input == "1")
@@ -47,7 +47,7 @@ class Program
             else
             {
                 // Restart the While-Loop if none of the above were chosen
-                Console.Clear;
+                Console.Clear();
             }
 
         }
@@ -86,7 +86,7 @@ class Program
                 actionsLeft --;
             }
             // Cooking Food if Player has at least 2 Ingredients
-            else if (input == "3")
+            else if (input == "3" && ingredients >= 2)
             {
                 ingredients -= 2;
                 food ++;
@@ -95,7 +95,7 @@ class Program
             else if (input == "4" && settlers > 1 && actionsLeft > 0)
             {
                 settlers ++;
-                Action --;
+                actionsLeft --;
             }
             // In case player did a wrong-type or did something they couldn't do
             else
@@ -107,11 +107,11 @@ class Program
             if (actionsLeft == 0)
             {
                 // clear screen, show food eaten and if survived (remove one settler if not enough food, isAlive = false if 0 settlers), set food to 0 if negative, reset actions, increase day by one)
-                Console.Clear;
+                Console.Clear();
                 int foodEaten = food - settlers;
                 Console.WriteLine("Food needed: " + foodEaten);
                 Console.WriteLine("Amount of Settlers: " + settlers);
-                food -= foodEaten;
+                food -= settlers;
 
                 if (food < 0)
                 {
@@ -132,6 +132,7 @@ class Program
                 {
                     Console.WriteLine(food + " Food remains.");
                     day ++;
+                    actionsLeft = 2;
                     Console.Write("[Press ENTER to Continue]");
                     Console.ReadLine();
                 }
