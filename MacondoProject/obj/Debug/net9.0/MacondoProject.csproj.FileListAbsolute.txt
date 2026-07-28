@@ -1,0 +1,14 @@
+c:\Users\melvi\Documents\MacondoProject\bin\Debug\net9.0\MacondoProject.exe
+c:\Users\melvi\Documents\MacondoProject\bin\Debug\net9.0\MacondoProject.deps.json
+c:\Users\melvi\Documents\MacondoProject\bin\Debug\net9.0\MacondoProject.runtimeconfig.json
+c:\Users\melvi\Documents\MacondoProject\bin\Debug\net9.0\MacondoProject.dll
+c:\Users\melvi\Documents\MacondoProject\bin\Debug\net9.0\MacondoProject.pdb
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\MacondoProject.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\MacondoProject.AssemblyInfoInputs.cache
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\MacondoProject.AssemblyInfo.cs
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\MacondoProject.csproj.CoreCompileInputs.cache
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\MacondoProject.dll
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\refint\MacondoProject.dll
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\MacondoProject.pdb
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\MacondoProject.genruntimeconfig.cache
+c:\Users\melvi\Documents\MacondoProject\obj\Debug\net9.0\ref\MacondoProject.dll
