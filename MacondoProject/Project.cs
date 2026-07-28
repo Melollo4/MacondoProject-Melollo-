@@ -62,10 +62,10 @@ class Program
             Console.WriteLine("");
             Console.WriteLine("Actions left today: " + actionsLeft);
             Console.WriteLine("");
-            Console.WriteLine("Current Goal:       " + currentGoal);
+            Console.WriteLine("Current Goal: " + currentGoal);
             Console.WriteLine("");
             Console.WriteLine("Choices:");
-            Console.WriteLine("1 - End day early");
+            Console.WriteLine("1 - End Day");
             Console.WriteLine("2 - Forage Ingredients     [+3 Ingredients] [-1 Action]");
             Console.WriteLine("3 - Cook Food              [-2 Ingredients] [+1 Food]");
             Console.WriteLine("4 - Reproduce              [+1 Settler]     [-1 Action]");
@@ -108,10 +108,9 @@ class Program
             {
                 // clear screen, show food eaten and if survived (remove one settler if not enough food, isAlive = false if 0 settlers), set food to 0 if negative, reset actions, increase day by one)
                 Console.Clear();
-                int foodEaten = food - settlers;
-                Console.WriteLine("Food needed: " + foodEaten);
-                Console.WriteLine("Amount of Settlers: " + settlers);
-                food -= settlers;
+                Console.WriteLine("Food: " + food);
+                Console.WriteLine("Current Settlers: " + settlers);
+                food = food - settlers;
 
                 if (food < 0)
                 {
