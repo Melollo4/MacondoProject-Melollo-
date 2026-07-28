@@ -30,7 +30,7 @@ class Program
             Console.WriteLine("1 - Play");
             Console.WriteLine("2 - Exit");
 
-            Console.Write("Input the number representing your choice.");
+            Console.Write("Input the number representing your choice: ");
             string input = Console.ReadLine();
 
             if (input == "1")
@@ -57,12 +57,12 @@ class Program
             
             // Display and Choices
             Console.Clear();
-            Console.WriteLine("Status - Day: " + day + " | Settlers: " + settlers);
-            Console.WriteLine("Resources - Food: " + food + " | Ingredients: " + ingredients);
+            Console.WriteLine("Status      Day: " + day + " | Settlers: " + settlers);
+            Console.WriteLine("Resources   Food: " + food + " | Ingredients: " + ingredients);
             Console.WriteLine("");
             Console.WriteLine("Actions left today: " + actionsLeft);
             Console.WriteLine("");
-            Console.WriteLine("Current Goal: " + currentGoal);
+            Console.WriteLine("Current Goal:       " + currentGoal);
             Console.WriteLine("");
             Console.WriteLine("Choices:");
             Console.WriteLine("1 - End day early");
