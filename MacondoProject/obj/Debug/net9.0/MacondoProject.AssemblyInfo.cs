@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MacondoProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8aedc2cce47f27bcc4216f469706660ecd726aed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90016a7d5e91f659cede4ab606fdf190f6b76172")]
 [assembly: System.Reflection.AssemblyProductAttribute("MacondoProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MacondoProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
