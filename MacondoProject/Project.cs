@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design.Serialization;
 using System.Reflection;
 
 class Program
@@ -19,8 +20,11 @@ class Program
         int greenhouses = 0;
         int kitchens = 0;
 
+        int foodProduction = 0;
+
         int food = 5;
         int materials = 2;
+        int components = 0;
 
         // Market Variables
         int money = 0;
@@ -29,7 +33,7 @@ class Program
         int availableHouses = 1;
 
         string currentGoal = "LvL 1: Have 5 Settlers";
-        int currentLevel = 4;
+        int currentLevel = 5;
 
         int actionsLeft = 2;
         
@@ -58,7 +62,7 @@ class Program
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine("                                                         v6.5.2");
+            Console.WriteLine("                                                         v6.9");
             Console.WriteLine("");
             Console.WriteLine("1 - Play");
             Console.WriteLine("2 - Rules");
@@ -157,62 +161,69 @@ class Program
             Console.WriteLine("World Table:");
 
             Console.WriteLine("");
-            Console.WriteLine("                            Current Settler-Cap = " + settlerCap);
+            Console.WriteLine("                              Current Settler-Cap = " + settlerCap);
+            Console.WriteLine("");
 
-                Console.WriteLine("                                 " + settlers + "               " + actionsLeft + "                 " + ingredients + "             " + food + "           " + materials + "                " + availableHouses + "             " + money + " ");
-                Console.WriteLine("                            [ Settlers  ] [ Actions Left  ] [ Ingredients  ] [ Food  ] [ Materials  ] [ Available Homes  ] [ $  ]");
+                Console.WriteLine("                                   " + settlers + "               " + actionsLeft + "                 " + ingredients + "             " + food + "           " + materials + "                " + availableHouses + "             " + money + "          " + components + " ");
+                Console.WriteLine("                              [ Settlers  ] [ Actions Left  ] [ Ingredients  ] [ Food  ] [ Materials  ] [ Available Homes  ] [ $  ] [ Components  ]");
                 Console.WriteLine("1  - End Month");
 
             if (currentSeason == "Spring")
             {
-                Console.Write("2  - Forage Ingredients                   "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]              "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((greenhouses *2) + 4) + "]                                                                       "); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("2  - Forage Ingredients                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]              "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((greenhouses *2) + 4) + "]                                                                       "); Console.ForegroundColor = ConsoleColor.White; 
             }
             else
             {
-                Console.Write("2  - Forage Ingredients                   "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]              "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((greenhouses *2) + 3) + "]                                                                       "); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("2  - Forage Ingredients                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]              "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((greenhouses *2) + 3) + "]                                                                       "); Console.ForegroundColor = ConsoleColor.White; 
             }
 
-                Console.Write("3  - Cook Food                                              "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-2]             "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[" + (kitchens +1) + "]                                                    "); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("3  - Cook Food                                                "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-2]             "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[" + (kitchens +1) + "]                                                    "); Console.ForegroundColor = ConsoleColor.White; 
 
             if (currentSeason == "Spring")
             {
-                Console.Write("4  - Scavenge Materials                   "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                        "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+3]                                         "); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("4  - Scavenge Materials                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                        "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+3]                                         "); Console.ForegroundColor = ConsoleColor.White; 
             }
             else
             {
-                Console.Write("4  - Scavenge Materials                   "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+2]                                         "); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("4  - Scavenge Materials                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+2]                                         "); Console.ForegroundColor = ConsoleColor.White;
             }
 
             if (currentSeason == "Fall")
             {
-                Console.Write("5  - Build a Home                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-6]           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]                         "); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("5  - Build a Home                           "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-6]           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]                         "); Console.ForegroundColor = ConsoleColor.White;
             }
             else
             {
-                Console.Write("5  - Build a Home                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5]           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]                         "); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("5  - Build a Home                           "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5]           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]                         "); Console.ForegroundColor = ConsoleColor.White;
             }
 
-                Console.Write("6  - Reproduce              "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]          "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-1]                                                        [-1]                         "); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("6  - Reproduce                "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]          "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-1]                                                        [-1]                         "); Console.ForegroundColor = ConsoleColor.White;
 
             if (currentLevel > 1)
             {
-                Console.Write("7  - Sell Ingredients                                       "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + currentLevel + "]                                                           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + (currentLevel +1) + "]"); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("7  - Sell Ingredients                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + currentLevel + "]                                                           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + (currentLevel +1) + "]"); Console.ForegroundColor = ConsoleColor.White; 
 
-                Console.Write("8  - Buy Food                                                                "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                                          "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-6]"); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("8  - Buy Food                                                                  "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                                          "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-6]"); Console.ForegroundColor = ConsoleColor.White; 
             }
             if (currentLevel > 2)
             {
-                Console.Write("9  - Sell Material                                                                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + (currentLevel -1) + "]                                "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((currentLevel -1) *2) + "]"); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("9  - Sell Material                                                                       "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + (currentLevel -1) + "]                                "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((currentLevel -1) *2) + "]"); Console.ForegroundColor = ConsoleColor.White; 
 
-                Console.Write("10 - Buy a Home                                                                                       "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                 "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-15]"); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("10 - Buy a Home                                                                                         "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                 "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-15]"); Console.ForegroundColor = ConsoleColor.White;
             }
             if (currentLevel > 3)
             {
-                Console.Write("11 - Build a Greenhouse                                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-10] "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+2]                                                    "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-50]"); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("11 - Build a Greenhouse                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]              "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-10] "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+2]                                                    "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-50]"); Console.ForegroundColor = ConsoleColor.White;
 
-                Console.Write("12 - Build a Kitchen                                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5] "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+1]                                    "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-50]"); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("12 - Build a Kitchen                        "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                               "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5] "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+1]                                    "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-50]"); Console.ForegroundColor = ConsoleColor.White;
 
-                Console.Write("13 - Build a City Town      "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+1]                                                                                          "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-100]"); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("13 - Build a City Town        "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+1]         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                                                             "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-100]"); Console.ForegroundColor = ConsoleColor.White;
+            }
+            if (currentLevel > 4)
+            {
+                Console.Write("14 - Assemble Component                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5]                                "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-50]   "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]"); Console.ForegroundColor = ConsoleColor.White;
+
+                Console.Write("15 - Automate Food Production               "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                               "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+1]                                                 "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-1]"); Console.ForegroundColor = ConsoleColor.White;
             }
 
             // Read Player Input
@@ -223,7 +234,7 @@ class Program
             if (input == "1")
             {
                 Console.Beep(500, 100); 
-                actionsLeft = -1;
+                actionsLeft = 0 - actionsLeft;
             }
             // Foraging Ingredients if Player has at least one Action left
             else if (input == "2" && actionsLeft > 0)
@@ -342,6 +353,22 @@ class Program
                 money -= 99;
                 settlerCap += 10;
             }
+            // Assembles one Component if Player has a higher Level than 4 and has at least one Action left and at least 5 Materials and 50 Money
+            else if (input == "14" && currentLevel > 4 && materials > 4 && money > 49)
+            {
+                Console.Beep(500, 100); 
+                actionsLeft --;
+                materials -= 5;
+                money -= 50;
+                components ++;
+            }
+            // Automates Food Production if Player has a higher Level than 4 and has at least one Action left and at least one Component
+            else if (input == "13" && currentLevel > 2 && money > 99)
+            {
+                Console.Beep(500, 100); 
+                components --;
+                foodProduction ++;
+            }
             // In case player did a wrong-type or did something they couldn't do
             else
             {
@@ -349,7 +376,7 @@ class Program
             }
 
             // Day Ends
-            if (actionsLeft == -1)
+            if (actionsLeft < 1)
             {
 
                 if (currentLevel == 0)
@@ -380,6 +407,14 @@ class Program
                 if (currentLevel == 3)
                 {
                     if (surviveForYearCounter < 1)
+                    {
+                        currentLevel ++;
+                        currentGoal = "Level 5: End a Month with 10 Actions left";
+                    }
+                }
+                if (currentLevel == 4)
+                {
+                    if (actionsLeft < -9)
                     {
                         currentLevel ++;
                         currentGoal = "Enjoy Life :]";
@@ -421,6 +456,13 @@ class Program
 
                 if (isAlive)
                 {
+
+                    if (currentLevel > 4)
+                    {
+                        Console.WriteLine("You Produced " + foodProduction + " Food.");
+                        food += foodProduction;
+                    }
+
                     Console.WriteLine(food + " Food remain.");
                     Console.WriteLine("");
                     day ++;
