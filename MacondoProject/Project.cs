@@ -26,6 +26,8 @@ class Program
         int materials = 2;
         int components = 0;
 
+        int moonRock = 0;
+
         // Market Variables
         int money = 0;
 
@@ -33,7 +35,7 @@ class Program
         int availableHouses = 1;
 
         string currentGoal = "LvL 1: Have 5 Settlers";
-        int currentLevel = 5;
+        int currentLevel = 0;
 
         int actionsLeft = 2;
         
@@ -62,7 +64,7 @@ class Program
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine("                                                         v6.9");
+            Console.WriteLine("                                                         V2.10");
             Console.WriteLine("");
             Console.WriteLine("1 - Play");
             Console.WriteLine("2 - Rules");
@@ -130,7 +132,7 @@ class Program
             
             // Display and Choices
             Console.Clear();
-            Console.WriteLine("Status:     Months Survived: " + day + " | Settlers: " + settlers);
+            Console.WriteLine("Months Survived: " + day);
             Console.WriteLine("");
             Console.WriteLine("Current Goal: " + currentGoal);
             Console.WriteLine("");
@@ -164,8 +166,8 @@ class Program
             Console.WriteLine("                              Current Settler-Cap = " + settlerCap);
             Console.WriteLine("");
 
-                Console.WriteLine("                                   " + settlers + "               " + actionsLeft + "                 " + ingredients + "             " + food + "           " + materials + "                " + availableHouses + "             " + money + "          " + components + " ");
-                Console.WriteLine("                              [ Settlers  ] [ Actions Left  ] [ Ingredients  ] [ Food  ] [ Materials  ] [ Available Homes  ] [ $  ] [ Components  ]");
+                Console.WriteLine("                                   " + settlers + "               " + actionsLeft + "                " + ingredients + "             " + food + "           " + materials + "                " + availableHouses + "             " + money + "          " + components + "         " + moonRock);
+                Console.WriteLine("                              [ Settlers  ] [ Actions Left  ] [ Ingredients  ] [ Food  ] [ Materials  ] [ Available Homes  ] [ $  ] [ Components  ] [ Moon Rock  ]");
                 Console.WriteLine("1  - End Month");
 
             if (currentSeason == "Spring")
@@ -201,15 +203,15 @@ class Program
 
             if (currentLevel > 1)
             {
-                Console.Write("7  - Sell Ingredients                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + currentLevel + "]                                                           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + (currentLevel +1) + "]"); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("7  - Sell Material                                                                       "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + (currentLevel -1) + "]                                "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((currentLevel -1) *2) + "]"); Console.ForegroundColor = ConsoleColor.White; 
 
-                Console.Write("8  - Buy Food                                                                  "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                                          "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-6]"); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("8  - Buy a Home                                                                                         "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                 "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-15]"); Console.ForegroundColor = ConsoleColor.White;
             }
             if (currentLevel > 2)
             {
-                Console.Write("9  - Sell Material                                                                       "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + (currentLevel -1) + "]                                "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + ((currentLevel -1) *2) + "]"); Console.ForegroundColor = ConsoleColor.White; 
+                Console.Write("9  - Sell Food                                                                 "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-" + currentLevel + "]                                                           "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+" + (currentLevel *4) + "]"); Console.ForegroundColor = ConsoleColor.White; 
 
-                Console.Write("10 - Buy a Home                                                                                         "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                 "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-15]"); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("10 - Buy Food                                                                  "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+1]                                          "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-5]"); Console.ForegroundColor = ConsoleColor.White; 
             }
             if (currentLevel > 3)
             {
@@ -225,6 +227,10 @@ class Program
 
                 Console.Write("15 - Automate Food Production               "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                               "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[P+1]                                                 "); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[-1]"); Console.ForegroundColor = ConsoleColor.White;
             }
+            if (currentLevel > 5)
+            {
+                Console.Write("16 - Bring back a Souvenir from Space       "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-3]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-20]                                "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-50] "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5]         "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]"); Console.ForegroundColor = ConsoleColor.White;
+            }                                
 
             // Read Player Input
             string input = Console.ReadLine();
@@ -234,7 +240,7 @@ class Program
             if (input == "1")
             {
                 Console.Beep(500, 100); 
-                actionsLeft = 0 - actionsLeft;
+                actionsLeft = -1 - actionsLeft;
             }
             // Foraging Ingredients if Player has at least one Action left
             else if (input == "2" && actionsLeft > 0)
@@ -302,29 +308,29 @@ class Program
                 actionsLeft --;
                 settlers ++;
             }
-            // Sells Ingredients if Player is a higher Level than 1 and has enough Food to Sell
-            else if (input == "7" && currentLevel > 1 && food >= currentLevel)
+            // Sells Ingredients if Player is a higher Level than 2 and has enough Food to Sell
+            else if (input == "9" && currentLevel > 2 && food >= currentLevel)
             {
                 Console.Beep(500, 100); 
                 food -= currentLevel;
-                money += currentLevel +1;
+                money += currentLevel *4;
             }
-            // Buys Food if Player is a higher Level than 1 and has at least 2 Money
-            else if (input == "8" && currentLevel > 1 && money > 1)
+            // Buys Food if Player is a higher Level than 2 and has at least 2 Money
+            else if (input == "10" && currentLevel > 2 && money > 1)
             {
                 Console.Beep(500, 100); 
-                money -= 2;
+                money -= 5;
                 food ++;
             }
-            // Sells Materials if player is a higher Level than 2 and has enough Materials to Sell
-            else if (input == "9" && currentLevel > 2 && materials >= (currentLevel -1))
+            // Sells Materials if player is a higher Level than 1 and has enough Materials to Sell
+            else if (input == "7" && currentLevel > 1 && materials >= (currentLevel -1))
             {
                 Console.Beep(500, 100); 
                 materials -= currentLevel -1;
                 money += currentLevel *2;
             }
             // Buys an Available House if Player has a higher Level than 1 and has at least 15 Money
-            else if (input == "10" && currentLevel > 1 && money > 14)
+            else if (input == "8" && currentLevel > 1 && money > 14)
             {
                 Console.Beep(500, 100); 
                 money -= 15;
@@ -376,7 +382,7 @@ class Program
             }
 
             // Day Ends
-            if (actionsLeft < 1)
+            if (actionsLeft < 0)
             {
 
                 if (currentLevel == 0)
@@ -392,7 +398,7 @@ class Program
                     if (food > 14)
                     {
                         currentLevel ++;
-                        currentGoal = "Level 3: Have $100";
+                        currentGoal = "Level 3: Have $50";
                     }
                 }
                 if (currentLevel == 2)
@@ -400,8 +406,8 @@ class Program
                     if (money > 99)
                     {
                         currentLevel ++;
-                        currentGoal = "Level 4: Survive for another Year";
-                        surviveForYearCounter = 12;
+                        currentGoal = "Level 4: Survive for another Season";
+                        surviveForYearCounter = 4;
                     }
                 }
                 if (currentLevel == 3)
@@ -409,16 +415,28 @@ class Program
                     if (surviveForYearCounter < 1)
                     {
                         currentLevel ++;
-                        currentGoal = "Level 5: End a Month with 10 Actions left";
+                        currentGoal = "Level 5: End a Month with 15 Actions left";
                     }
                 }
                 if (currentLevel == 4)
                 {
-                    if (actionsLeft < -9)
+                    if (actionsLeft < -15)
                     {
                         currentLevel ++;
-                        currentGoal = "Enjoy Life :]";
+                        currentGoal = "Level 6: Automate Food Production to a point where manually cooking food is pointless";
                     }
+                }
+                if (currentLevel == 5)
+                {
+                    if (foodProduction == settlers)
+                    {
+                        currentLevel ++;
+                        currentGoal = "Level 7: Bring back a souvenir from Space";
+                    }
+                }
+                if (currentLevel == 6)
+                {
+                    
                 }
 
                 if (specialEffects == "Heatwave: You'll loose 2 extra Food at the end of the Month")
