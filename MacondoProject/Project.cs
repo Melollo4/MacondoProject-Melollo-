@@ -46,6 +46,8 @@ class Program
         int seasonalCountdown = 4;
         int surviveForYearCounter = 0;
 
+        bool wentToMars = false;
+
         // Start Screen Loop
         while (isOnStart)
         {
@@ -64,7 +66,7 @@ class Program
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine("                                                         V2.10");
+            Console.WriteLine("                                                         V2.15");
             Console.WriteLine("");
             Console.WriteLine("1 - Play");
             Console.WriteLine("2 - Rules");
@@ -187,7 +189,7 @@ class Program
             }
             else
             {
-                Console.Write("4  - Scavenge Materials                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                         "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+2]                                         "); Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("4  - Scavenge Materials                     "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-1]                                        "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+2]                                         "); Console.ForegroundColor = ConsoleColor.White;
             }
 
             if (currentSeason == "Fall")
@@ -229,8 +231,16 @@ class Program
             }
             if (currentLevel > 5)
             {
-                Console.Write("16 - Bring back a Souvenir from Space       "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-3]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-20]                                "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-50] "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5]         "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]"); Console.ForegroundColor = ConsoleColor.White;
-            }                                
+                Console.Write("16 - Fetch a Moon Rock                      "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-3]                                         "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-20]                                "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-50] "); Console.ForegroundColor = ConsoleColor.Red; Console.Write("[-5]         "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[+1]"); Console.ForegroundColor = ConsoleColor.White;
+            }
+            if (currentLevel > 6)
+            {
+                Console.Write("17 - Sell a Moon Rock                                                                                                         "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("[+150]              "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[-1]"); Console.ForegroundColor = ConsoleColor.White;
+            }
+            if (currentLevel > 7)
+            {
+                Console.Write("18 - Go to Mars                                                                                                                                   "); Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[-100]"); Console.ForegroundColor = ConsoleColor.White;
+            }
 
             // Read Player Input
             string input = Console.ReadLine();
@@ -369,11 +379,28 @@ class Program
                 components ++;
             }
             // Automates Food Production if Player has a higher Level than 4 and has at least one Action left and at least one Component
-            else if (input == "13" && currentLevel > 2 && money > 99)
+            else if (input == "15" && currentLevel > 2 && money > 99)
             {
                 Console.Beep(500, 100); 
                 components --;
                 foodProduction ++;
+            }
+            // Fetches a Moon Rock if Player has a higher level than 5 and has at least 3 Actions left and at least 20 Materials and at least 5 Components and at least 50 Money
+            else if (input == "16" && currentLevel > 5 && actionsLeft > 2 && materials > 19 && money > 49 && components > 4)
+            {
+                Console.Beep(500, 100);
+                actionsLeft -= 3;
+                materials -= 20;
+                money -= 50;
+                components -= 5;
+                moonRock ++;
+            }
+            // Sells a Moon Rock if Player has a higher level than 6 and has at least 1 Moon Rock
+            else if (input == "17" && currentLevel > 6 && moonRock > 0)
+            {
+                Console.Beep(500, 100);
+                moonRock --;
+                money += 150;
             }
             // In case player did a wrong-type or did something they couldn't do
             else
@@ -384,6 +411,11 @@ class Program
             // Day Ends
             if (actionsLeft < 0)
             {
+
+                if (wentToMars)
+                {
+                    isAlive = false;
+                }
 
                 if (currentLevel == 0)
                 {
@@ -436,7 +468,28 @@ class Program
                 }
                 if (currentLevel == 6)
                 {
-                    
+                    if (moonRock > 0)
+                    {
+                        currentLevel++;
+                        currentGoal = "Level 8: Sell Moon Rocks to earn 500 $";
+                    }
+                }
+                if (currentLevel == 7)
+                {
+                    if (money > 499)
+                    {
+                        currentLevel ++;
+                        currentGoal = "Level 9: Have exactly 25 Settlers";
+                    }
+                }
+                if (currentLevel == 8)
+                {
+                    if (settlers == 25)
+                    {
+                        currentLevel ++;
+                        currentGoal = "Level 10: Reach Mars";
+                        surviveForYearCounter = -1;
+                    }
                 }
 
                 if (specialEffects == "Heatwave: You'll loose 2 extra Food at the end of the Month")
@@ -520,6 +573,15 @@ class Program
 
                     }
 
+                    if (surviveForYearCounter < -1)
+                    {
+                        // Start eradication of humanity
+                    }
+                    if (currentLevel > 7 && surviveForYearCounter < -3)
+                    {
+                        currentGoal = "SURVIVE";
+                    }
+
                     if (currentLevel > 2)
                     {
                         Random random = new Random();
@@ -559,11 +621,31 @@ class Program
                 }
                 else
                 {
-                    Console.WriteLine("Your Settlement was Eradicated.");
-                    Console.WriteLine("You Survived for " + day + " days.");
-                    Console.WriteLine("Thank you for playing :]");
-                    Console.ReadLine();
-                    Console.Beep(500, 100); 
+                    if (wentToMars)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("You're actually insane.");
+                        Console.WriteLine("It was never meant for anyone to actually do that, regardless of the way you did it.");
+                        Console.WriteLine("But since you're so damn determined, I couldn't just leave you with nothing after all of that wasted time.");
+                        Console.WriteLine("I'm genuinly impressed.");
+                        Console.WriteLine("That's all. Now go back and play the game for REAL this time!");
+                    }
+                    else if (surviveForYearCounter < 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Humanity had no chance against the wildlife of Space.");
+                        Console.WriteLine("Humanity was Eradicated.");
+                        Console.ReadLine();
+                        Console.Beep(500, 1000); 
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Your Settlement was Eradicated.");
+                        Console.WriteLine("You Survived for " + day + " Months.");
+                        Console.ReadLine();
+                        Console.Beep(500, 100); 
+                    }
                 }
 
             }
